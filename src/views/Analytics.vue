@@ -97,8 +97,8 @@
       <div class="content">
         <!-- <img src="../assets/notebook.png"> -->
         <GMapMap
-          :center="{ lat: -23.60541, lng: -46.69411 }"
-          :zoom="12"
+          :center=mapConfig.center
+          :zoom=mapConfig.zoom
           map-type-id="terrain"
           style="width: 480px; height: 500px"
           :options="{
@@ -110,37 +110,22 @@
             fullscreenControl: true
           }"
         >
-        <GMapMarker
-          :key="index"
-          v-for="(m, index) in mapMarkers"
-          :position="m"
-          :icon= '{
-              url: "https://developers.google.com/maps/documentation/javascript/examples/full/images/info-i_maps.png",
-              scaledSize: {width: 77, height: 77},
-              labelOrigin: {x: 16, y: -10}
-          }'
-          :clickable="true"
-          :draggable="true"
-        />
+          <GMapMarker
+            :key="index"
+            v-for="(m, index) in mapMarkers"
+            :position="m.position"
+            :clickable="true"
+            :draggable="false"
+          >
+            <GMapInfoWindow :opened="true">
+              <h4>{{ m.position.name }}</h4>
+            </GMapInfoWindow>
+          </GMapMarker>
         </GMapMap>
       </div>
     </div>
   </div>
 </template>
-
-<!-- <script setup lang="ts">
-interface IAnalyticsProperties {
-  input: string;
-  selectInput: string;
-}
-
-const properties = withDefaults(defineProps<IAnalyticsProperties>(), {
-  input: '',
-  selectInput: ''
-});
-
-console.log(properties);
-</script> -->
 
 <script lang="ts">
 import GoogleMap from '../components/GoogleMap.vue';
@@ -154,27 +139,33 @@ export default {
   data() {
     return {
       mapConfig: {
-        zoom: 12,
+        zoom: 14,
         center: {
-          lat: -6.1753871,
-          lng: 106.8249641
+          lat: -23.61170,
+          lng: -46.69407,
         },
       },
       mapMarkers: [
         {
-          name: 'GBK',
-          lat: -23.60541,
-          long: -46.69411,
+          position: {
+            name: 'Casa do Leo',
+            lat: -23.60541,
+            lng: -46.69411,
+          }
         },
         {
-          name: 'Ancol',
-          lat: -6.1229209,
-          long: 106.8228804,
+          position: {
+            name: 'Loja das Bikes',
+            lat: -23.62291,
+            lng: -46.69770,
+          }
         },
         {
-          name: 'Monas',
-          lat: -6.1753871,
-          long: 106.8249641,
+          position: {
+            name: 'Hiperstream',
+            lat: -23.61170,
+            lng: -46.69407,
+          }
         }
       ],
       response: {
