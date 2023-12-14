@@ -3,10 +3,10 @@
   <div class="container">
     <div class="mid">
       <div class="aside">
-      <h4>Informações da categoria</h4>
+      <h3>Informações da categoria</h3>
       <v-list
         class="mx-1"
-        max-width="300"
+        max-width="350"
       >
         <v-list-item
           link
@@ -31,6 +31,34 @@
             <v-badge
               color="success"
               :content= response.ageMostInterest[response.ageMostInterest.length-1].idade
+              inline
+            ></v-badge>
+          </template>
+        </v-list-item>
+
+        <v-list-item
+          link
+          prepend-icon="mdi-cash-plus"
+          title="Maior Valor Gastos"
+        >
+          <template v-slot:append>
+            <v-badge
+              color="success"
+              :content=response.dealStatics.maxValue
+              inline
+            ></v-badge>
+          </template>
+        </v-list-item>
+
+        <v-list-item
+          link
+          prepend-icon="mdi-cash-minus"
+          title="Menor Valor Gastos"
+        >
+          <template v-slot:append>
+            <v-badge
+              color="success"
+              :content=response.dealStatics.minValue
               inline
             ></v-badge>
           </template>
@@ -271,7 +299,7 @@ export default {
   }
   .mid {
     background-color: white;
-    width: 800px;
+    width: 900px;
     height: 500px;
     border-radius: 10px;
     display: flex;
@@ -279,10 +307,10 @@ export default {
   }
 
   .aside {
-    width: 300px;
+    width: 400px;
   }
 
-  h4{
+  h3{
     margin: 10px;
   }
   .content {
@@ -295,7 +323,7 @@ export default {
   }
 
   .v-list-item__append{
-    width: 60px;
+    width: 80px;
   }
 
   .v-list {
