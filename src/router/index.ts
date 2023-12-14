@@ -16,6 +16,17 @@ const routes = [
         component: () => import('@/views/Teste.vue'),
       },
       {
+        path: 'analytics/:input',
+        name: 'analytics/:input',
+        component: () => import('@/views/Analytics.vue'),
+        props: (routeWithParams: RouteLocationNormalized) => {
+          const { params, ...routeWithoutParams } = routeWithParams;
+          return {
+            ...params, routeWithoutParams
+          };
+        },
+      },
+      {
         path: 'analytics/:input/:selectInput',
         name: 'analytics/:input/:selectInput',
         component: () => import('@/views/Analytics.vue'),
@@ -25,6 +36,11 @@ const routes = [
             ...params, routeWithoutParams
           };
         },
+      },
+      {
+        path: 'analyticsNoParams',
+        name: 'analyticsNoParams',
+        component: () => import('@/views/AnalyticsNoParams.vue')
       }
     ],
   },

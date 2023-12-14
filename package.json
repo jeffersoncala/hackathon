@@ -11,10 +11,12 @@
   "dependencies": {
     "@fawmi/vue-google-maps": "^0.9.79",
     "@mdi/font": "7.0.96",
+    "chart.js": "^4.4.1",
     "core-js": "^3.29.0",
     "google-maps-api-loader": "^1.1.1",
     "roboto-fontface": "*",
     "vue": "^3.2.0",
+    "vue-chartjs": "^5.2.0",
     "vue-router": "^4.0.0",
     "vuetify": "^3.0.0"
   },
