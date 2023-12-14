@@ -3,7 +3,7 @@
     <div class="left">
       <div class="caixa-dados">
         <img class="hi" src="../assets/hi.png">
-        <h1>Hi-Analytics</h1>
+        <h1>:hinalytics</h1>
         <div class="caixa-input">
           <v-select v-model="requestType" :items="requestTypes"></v-select>
           <div v-if="requestType == 'Produto'">

@@ -130,6 +130,7 @@
 <script lang="ts">
 import GoogleMap from '../components/GoogleMap.vue';
 import GoogleMapMarkers from '../components/GoogleMapMarkers.vue';
+import axios from 'axios'
 
 export default {
   components: {
@@ -139,34 +140,62 @@ export default {
   data() {
     return {
       mapConfig: {
-        zoom: 14,
+        zoom: 10,
         center: {
-          lat: -23.61170,
-          lng: -46.69407,
+          lat: -23.5924312,
+          lng: -46.6883448,
         },
       },
       mapMarkers: [
         {
           position: {
-            name: 'Casa do Leo',
-            lat: -23.60541,
+            name: 'SMS Controle Total',
+            lat: -23.5232598,
             lng: -46.69411,
           }
         },
         {
           position: {
-            name: 'Loja das Bikes',
-            lat: -23.62291,
-            lng: -46.69770,
+            name: 'Pagamento Banco CSF',
+            lat: -23.6154476,
+            lng: -46.7033633,
           }
         },
         {
           position: {
-            name: 'Hiperstream',
-            lat: -23.61170,
-            lng: -46.69407,
+            name: 'Microsoft*Xbox, Sao Paulo',
+            lat: -23.5924312,
+            lng: -46.6883448,
           }
-        }
+        },
+        {
+          position: {
+            name: 'LOPES   SILVA, SANTA RITA DO',
+            lat: -23.6219561,
+            lng: -46.6931732,
+          }
+        },
+        {
+          position: {
+            name: 'SMS Controle Total',
+            lat: -23.5232598,
+            lng: -46.6964681,
+          }
+        },
+        {
+          position: {
+            name: 'GIL MATERIAL DE CONST, SANTA RITA DO',
+            lat: -23.5237339,
+            lng: -46.5209817,
+          }
+        },
+        {
+          position: {
+            name: 'GIL MATERIAL DE CONST, SANTA RITA DO',
+            lat: -23.5237339,
+            lng: -46.5209817,
+          }
+        },
       ],
       response: {
         ageMostInterest: [
@@ -276,9 +305,17 @@ export default {
             dealCount: 16
           }
         ]
-      }
+      },
     };
   },
+  mounted () {
+    axios
+      .get('https://a257-200-232-152-13.ngrok-free.app/api/User/john@example.com')
+      .then(response => {
+        console.log(response)
+      })
+  },
+
 }
 </script>
 
