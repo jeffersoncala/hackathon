@@ -1,75 +1,379 @@
 <template>
-  <v-container class="fill-height">
-    <v-responsive class="align-center text-center fill-height">
-      <v-img height="300" src="@/assets/logo.svg" />
-
-      <div class="text-body-2 font-weight-light mb-n1">Welcome to</div>
-
-      <h1 class="text-h2 font-weight-bold">Vuetify</h1>
-
-      <div class="py-14" />
-
-      <v-row class="d-flex align-center justify-center">
-        <v-col cols="auto">
-          <v-btn
-            href="https://vuetifyjs.com/components/all/"
-            min-width="164"
-            rel="noopener noreferrer"
-            target="_blank"
-            variant="text"
-          >
-            <v-icon
-              icon="mdi-view-dashboard"
-              size="large"
-              start
-            />
-
-            Components
-          </v-btn>
-        </v-col>
-
-        <v-col cols="auto">
-          <v-btn
-            color="primary"
-            href="https://vuetifyjs.com/introduction/why-vuetify/#feature-guides"
-            min-width="228"
-            rel="noopener noreferrer"
-            size="x-large"
-            target="_blank"
-            variant="flat"
-          >
-            <v-icon
-              icon="mdi-speedometer"
-              size="large"
-              start
-            />
-
-            Get Started
-          </v-btn>
-        </v-col>
-
-        <v-col cols="auto">
-          <v-btn
-            href="https://community.vuetifyjs.com/"
-            min-width="164"
-            rel="noopener noreferrer"
-            target="_blank"
-            variant="text"
-          >
-            <v-icon
-              icon="mdi-account-group"
-              size="large"
-              start
-            />
-
-            Community
-          </v-btn>
-        </v-col>
-      </v-row>
-    </v-responsive>
-  </v-container>
+  <div class="container">
+    <div class="left">
+      <div class="caixa-dados">
+        <img class="hi" src="../assets/hi.png">
+        <h1>Hi-Ana</h1>
+        <div class="caixa-input">
+          <v-text-field class="input1" label="Nome Produto"></v-text-field>
+          <v-select  label="Categoria" item-title="id"
+            :items="[{
+                id:'restaurant',
+                name:'Bares e Restaurantes'
+              },
+              {
+                id:'food',
+                name:'Bares e Restaurantes'
+              },
+              {
+                id:'establishment',
+                name:'Local Fisico'
+              },
+              {
+                id:'accounting',
+                name:'Serviços'
+              },
+              {
+                id:'aiport',
+                name:'Viagem'
+              },
+              {
+                id:'amusement_park',
+                name:'Transporte'
+              },
+              {
+                id:'aquarium',
+                name:'Lazer'
+              },
+              {
+                id:'art_gallery',
+                name:'Lazer'
+              },
+              {
+                id:'art',
+                name:'Serviços'
+              },
+              {
+                id:'bakery',
+                name:'Bares e Restaurantes'
+              },
+              {
+                id:'bank',
+                name:'Serviços'
+              },
+              {
+                id:'bar',
+                name:'Bares e Restaurantes'
+              },
+              {
+                id:'beauty_salon',
+                name:'Beleza'
+              },
+              {
+                id:'bicycle_store',
+                name:'Compras'
+              },
+              {
+                id:'book_store',
+                name:'Lazer'
+              },
+              {
+                id:'bowling_alley',
+                name:'Lazer'
+              },
+              {
+                id:'bus_station',
+                name:'Transporte'
+              },
+              {
+                id:'cafe',
+                name:'Bares e Restaurantes'
+              },
+              {
+                id:'campground',
+                name:'Lazer'
+              },
+              {
+                id:'car_dealer',
+                name:'Compras'
+              },
+              {
+                id:'car_rental',
+                name:'Serviços'
+              },
+              {
+                id:'car_repair',
+                name:'Serviços'
+              },
+              {
+                id:'car_wash',
+                name:'Serviços'
+              },
+              {
+                id:'casino',
+                name:'Lazer'
+              },
+              {
+                id:'cemetery',
+                name:'Serviços'
+              },
+              {
+                id:'city_hall',
+                name:'Serviços'
+              },
+              {
+                id:'clothing_store',
+                name:'Compras'
+              },
+              {
+                id:'dentist',
+                name:'Saúde'
+              },
+              {
+                id:'department_store',
+                name:'Compras'
+              },
+              {
+                id:'doctor',
+                name:'Saúde'
+              },
+              {
+                id:'drugstore',
+                name:'Saúde'
+              },
+              {
+                id:'electrician',
+                name:'Serviços'
+              },
+              {
+                id:'electronics_store',
+                name:'Compras'
+              },
+              {
+                id:'embassy',
+                name:'Serviços'
+              },
+              {
+                id:'fire_station',
+                name:'Serviços'
+              },
+              {
+                id:'florist',
+                name:'Serviços'
+              },
+              {
+                id:'funeral_home',
+                name:'Serviços'
+              },
+              {
+                id:'furniture_store',
+                name:'Compras'
+              },
+              {
+                id:'gas_station',
+                name:'Serviços'
+              },
+              {
+                id:'gym',
+                name:'Saúde'
+              },
+              {
+                id:'hair_care',
+                name:'Beleza'
+              },
+              {
+                id:'hardware_store',
+                name:'Compras'
+              },
+              {
+                id:'home_goods_store',
+                name:'Casa'
+              },
+              {
+                id:'hospital',
+                name:'Saúde'
+              },
+              {
+                id:'insurance_agency',
+                name:'Serviços'
+              },
+              {
+                id:'jewelry_store',
+                name:'Compras'
+              },
+              {
+                id:'laundry',
+                name:'Serviços'
+              },
+              {
+                id:'lawyer',
+                name:'Serviços'
+              },
+              {
+                id:'library',
+                name:'Educação'
+              },
+              {
+                id:'light_rail_station',
+                name:'Transporte'
+              },
+              {
+                id:'liquor_store',
+                name:'Lazer'
+              },
+              {
+                id:'local_government_office',
+                name:'Serviços'
+              },
+              {
+                id:'locksmith',
+                name:'Serviços'
+              },
+              {
+                id:'lodging',
+                name:'Viagem'
+              },
+              {
+                id:'meal_delivery',
+                name:'Bares e Restaurantes'
+              },
+              {
+                id:'movie_rental',
+                name:'Serviços'
+              },
+              {
+                id:'movie_theater',
+                name:'Lazer'
+              },
+              {
+                id:'moving_company',
+                name:'Serviços'
+              },
+              {
+                id:'museum',
+                name:'Lazer'
+              },
+              {
+                id:'night_club',
+                name:'Lazer'
+              },
+              {
+                id:'painter',
+                name:'Serviços'
+              },
+              {
+                id:'park_lazer',
+                name:'Serviços'
+              },
+              {
+                id:'pet_store',
+                name:'Pets'
+              },
+              {
+                id:'pharmacy',
+                name:'Saúde'
+              },
+              {
+                id:'physiotherapist',
+                name:'Saúde'
+              },
+              {
+                id:'plumber',
+                name:'Serviços'
+              },
+              {
+                id:'police',
+                name:'Serviços'
+              },
+              {
+                id:'post_office',
+                name:'Serviços'
+              },
+              {
+                id:'primary_school',
+                name:'Educação'
+              },
+              {
+                id:'real_estate_agency',
+                name:'Serviços'
+              },
+              {
+                id:'roofing_contractor',
+                name:'Serviços'
+              },
+              {
+                id:'rv_park',
+                name:'Lazer'
+              },
+              {
+                id:'school',
+                name:'Educação'
+              },
+              {
+                id:'secondary_school',
+                name:'Educação'
+              },
+              {
+                id:'shoe_store',
+                name:'Serviços'
+              },
+              {
+                id:'shopping_mall',
+                name:'Compras'
+              },
+              {
+                id:'stadium',
+                name:'Lazer'
+              },
+              {
+                id:'storage',
+                name:'Serviços'
+              },
+              {
+                id:'subway_station',
+                name:'Transporte'
+              },
+              {
+                id:'supermarket',
+                name:'Mercado'
+              },
+              {
+                id:'taxi_stand',
+                name:'Transporte'
+              },
+              {
+                id:'tourist_attraction',
+                name:'Viagem'
+              },
+              {
+                id:'train_station',
+                name:'Transporte'
+              },
+              {
+                id:'transit_station',
+                name:'Transporte'
+              },
+              {
+                id:'travel_agency',
+                name:'Serviços'
+              },
+              {
+                id:'university',
+                name:'Educação'
+              },
+              {
+                id:'veterinary_care',
+                name:'Pets'
+              },
+              {
+                id:'zoo',
+                name:'Lazer'
+              },
+              {
+                id:'grocery_or_supermarket',
+                name:'Supermercado'
+              }]"
+          ></v-select>
+          <v-btn color="#9400ff" @click="functionRouter()">Buscar</v-btn>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <img class="hipers" src="../assets/hipers.png">
+      <img class="notebook" src="../assets/notebook.png">
+    </div>
+  </div>
 </template>
 
-<script lang="ts" setup>
-  //
+<script setup>
 </script>
